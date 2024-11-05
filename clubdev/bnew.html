@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P X DevDays</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            overflow: hidden;
+        }
+        .header {
+            width: 100%;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .header .dropdown {
+            width: 30px;
+            height: 30px;
+            background-color: #444;
+            border-radius: 50%;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .poster {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+        .poster:hover {
+            transform: scale(1.05);
+        }
+        .poster img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .button {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #663399;
+            transform: translateY(-3px);
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #1a1a1a;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+        .footer-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        .footer-icons a {
+            color: #fff;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-icons a:hover {
+            color: #4b0082;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>DEVS</h1>
+        <div class="dropdown"></div>
+    </div>
+    <div class="container">
+        <div class="poster">
+            <h2>P2P X DevDays</h2>
+            <p>20 Days 4 Challenges</p>
+            <p>Submit your creations, earn instant shoutouts.</p>
+            <button class="button" onclick="window.location.href='new.html'">See Challenges</button>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; DEVS
+        <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

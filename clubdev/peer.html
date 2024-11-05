@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVS Community</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #090909; /* Dark background */
+            color: #c8c8c8; /* Light text color */
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        nav {
+            background-color: #151515;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .intro-section h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .intro-section p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #aaaaaa;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            background: #ff6b6b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background: #ff8787;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 3rem;
+            background: #151515;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            background: #222;
+            padding: 1rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #c8c8c8;
+        }
+
+        /* Card Section */
+        .cards-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 3rem;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            width: 220px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 2px solid #ff6b6b;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #cccccc;
+            font-size: 0.9rem;
+        }
+
+        .card .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            color: #ff6b6b;
+            background: #333;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .card .read-more:hover {
+            background: #444;
+        }
+
+        /* Footer */
+        footer {
+            background: #151515;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav>
+        <div class="logo">DEVS</div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <h1>What is Peer-To-Peer?</h1>
+        <p>Welcome to DEVS P2P Hub! Here, you'll find a supportive learning environment where developers collaborate, connect, and share knowledge. Join us to grow together as a community, whether you're a seasoned pro or just starting your journey.</p>
+        <div class="btn-container">
+            <a href="#" class="btn">Join Technical Community</a>
+            <a href="#" class="btn">Join Design Community</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <span>What is DEVS all about?</span>
+            <span>+</span>
+        </div>
+        <div class="faq-item">
+            <span>Who should join this club?</span>
+            <span>+</span>
+        </div>
+        <div class="faq-item">
+            <span>What about beginners?</span>
+            <span>+</span>
+        </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="card">
+            <img src="https://via.placeholder.com/200x250" alt="WebDev">
+            <h3>Web Development</h3>
+            <p>Mentor: Liveesh</p>
+            <a href="#" class="read-more">Roadmap</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x250" alt="App Development">
+            <h3>App Development</h3>
+            <p>Mentor: Soniya</p>
+            <a href="#" class="read-more">Roadmap</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x250" alt="Machine Learning">
+            <h3>Machine Learning</h3>
+            <p>Mentor: Diksha Shrivuthi</p>
+            <a href="#" class="read-more">Roadmap</a>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x250" alt="Cyber Security">
+            <h3>Cyber Security</h3>
+            <p>Mentor: Ritesh</p>
+            <a href="#" class="read-more">Roadmap</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 DEVS Community</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 2rem;
+      background: #0f172a;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated Background with Pure CSS */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff15, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #ffffff20, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ffffff15, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #ffffff20, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #ffffff15, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 160px 120px, #ffffff20, rgba(0,0,0,0));
+      background-repeat: repeat;
+      animation: starsFloat 8s linear infinite;
+    }
+
+    .bg-animation::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(125deg, #0f172a, #1e293b);
+      animation: gradientMove 15s ease infinite;
+    }
+
+    .bg-animation::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        transparent 0%,
+        rgba(99, 102, 241, 0.05) 50%,
+        transparent 100%
+      );
+      animation: scanline 10s ease-in-out infinite;
+    }
+
+    @keyframes starsFloat {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-100px);
+      }
+    }
+
+    @keyframes gradientMove {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes scanline {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100%);
+      }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      position: relative;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    .header::before {
+      content: '🚀';
+      position: absolute;
+      font-size: 3rem;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rocketFloat 2s ease-in-out infinite;
+    }
+
+    @keyframes rocketFloat {
+      0%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateX(-50%) translateY(-15px) rotate(3deg);
+      }
+    }
+
+    .title {
+      font-size: 3rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+      text-shadow: 0 0 10px rgba(99,102,241,0.3);
+      padding-top: 3rem;
+    }
+
+    .title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 4px;
+      background: linear-gradient(90deg, #6366f1, #8b5cf6, #6366f1);
+      background-size: 200% 100%;
+      animation: gradientSlide 3s linear infinite;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      perspective: 1000px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      animation: fadeInUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .card::before,
+    .card::after {
+      content: '';
+      position: absolute;
+      width: 150%;
+      height: 150%;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(99, 102, 241, 0.3) 25%,
+        transparent 50%
+      );
+      animation: borderRotate 4s linear infinite;
+      border-radius: inherit;
+    }
+
+    .card::before {
+      top: -25%;
+      left: -25%;
+      animation-direction: reverse;
+    }
+
+    .card::after {
+      bottom: -25%;
+      right: -25%;
+    }
+
+    @keyframes borderRotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .card:hover {
+      transform: translateY(-15px) rotateX(10deg);
+      border-color: rgba(99,102,241,0.5);
+      box-shadow: 
+        0 20px 40px rgba(0,0,0,0.3),
+        0 0 20px rgba(99,102,241,0.3);
+      transition: all 0.4s ease;
+    }
+
+    .card h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 10px rgba(99,102,241,0.3);
+    }
+
+    .card p {
+      color: #cbd5e1;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-button {
+      background: linear-gradient(90deg, #6366f1, #8b5cf6);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      overflow: hidden;
+    }
+
+    .card-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 50%);
+      transform: scale(0);
+      transition: transform 0.5s ease-out;
+    }
+
+    .card-button:hover::before {
+      transform: scale(1);
+    }
+
+    .card-button:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 0 20px rgba(99,102,241,0.5),
+        0 0 40px rgba(99,102,241,0.3);
+    }
+
+    /* Staggered animation delays */
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.2s; }
+    .card:nth-child(3) { animation-delay: 0.3s; }
+    .card:nth-child(4) { animation-delay: 0.4s; }
+    .card:nth-child(5) { animation-delay: 0.5s; }
+    .card:nth-child(6) { animation-delay: 0.6s; }
+    .card:nth-child(7) { animation-delay: 0.7s; }
+    .card:nth-child(8) { animation-delay: 0.8s; }
+    .card:nth-child(9) { animation-delay: 0.9s; }
+    .card:nth-child(10) { animation-delay: 1s; }
+
+    @keyframes gradientSlide {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+
+  <div class="header">
+    <h1 class="title">Technical Challenges</h1>
+  </div>
+  
+  <div class="container">
+    <div class="card">
+      <h3>App Development</h3>
+      <p>Create innovative mobile applications using modern frameworks and best practices.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Web Development</h3>
+      <p>Build responsive and dynamic web applications with cutting-edge technologies.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Cyber Security</h3>
+      <p>Develop secure solutions and implement robust security measures.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Machine Learning</h3>
+      <p>Create intelligent algorithms and models for data analysis and prediction.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Competitive Programming</h3>
+      <p>Solve complex algorithmic challenges and optimize code performance.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>IoT</h3>
+      <p>Build connected device solutions and smart systems.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Game Development</h3>
+      <p>Create engaging gaming experiences using modern game engines.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Graphic Design</h3>
+      <p>Design beautiful and functional user interfaces and graphics.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>UI/UX</h3>
+      <p>Create intuitive and user-friendly interface designs.</p>
+      <button class="card-button">Submit</button>
+    </div>
+    
+    <div class="card">
+      <h3>Video Editing</h3>
+      <p>Edit and produce high-quality video content.</p>
+      <button class="card-button">Submit</button>
+    </div>
+  </div>
+</body>
+</html>

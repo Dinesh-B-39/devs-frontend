@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVS Events</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        /* General styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #090909; /* Dark background */
+            color: #c8c8c8; /* Light text color */
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Header */
+        nav {
+            background-color: #151515;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .events-section h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+        /* Event Cards */
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .event-card {
+            background: #1a1a1a;
+            width: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            position: relative;
+            color: #fff;
+            border: 2px solid #ff6b6b;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .event-info {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-description {
+            font-size: 0.9rem;
+            color: #c8c8c8;
+            margin-bottom: 1rem;
+        }
+
+        .register-btn {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            background: #ff6b6b;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .register-btn:hover {
+            background: #ff8787;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav>
+        <div class="logo">DEVS Events</div>
+    </nav>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <h1>Upcoming Events</h1>
+        <div class="card-container">
+            <!-- Event 1 -->
+            <div class="event-card animate_animated animate_fadeIn">
+                <img src="https://via.placeholder.com/280x180" alt="Event Image">
+                <div class="event-info">
+                    <h2 class="event-title">Web Development Workshop</h2>
+                    <p class="event-description">Learn the basics of HTML, CSS, and JavaScript in this interactive workshop for beginners!</p>
+                    <a href="#" class="register-btn">Register</a>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="event-card animate_animated animate_fadeIn" style="animation-delay: 0.2s;">
+                <img src="https://via.placeholder.com/280x180" alt="Event Image">
+                <div class="event-info">
+                    <h2 class="event-title">Machine Learning Bootcamp</h2>
+                    <p class="event-description">Dive into the world of AI and machine learning with hands-on projects and expert guidance.</p>
+                    <a href="#" class="register-btn">Register</a>
+                </div>
+            </div>
+            <!-- Event 3 -->
+            <div class="event-card animate_animated animate_fadeIn" style="animation-delay: 0.4s;">
+                <img src="https://via.placeholder.com/280x180" alt="Event Image">
+                <div class="event-info">
+                    <h2 class="event-title">Cybersecurity Seminar</h2>
+                    <p class="event-description">Explore the fundamentals of cybersecurity, from basic principles to advanced techniques.</p>
+                    <a href="#" class="register-btn">Register</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
