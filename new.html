@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Challenges</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            animation: backgroundShift 10s infinite;
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .header {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: slideDown 1s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 270px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            transition: transform 0.5s, box-shadow 0.3s;
+            animation: fadeIn 0.7s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-15px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .card-header {
+            padding: 15px;
+            font-weight: bold;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #f9f9f9;
+            text-align: center;
+        }
+        .card-content {
+            padding: 15px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .card-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .button {
+            padding: 10px;
+            width: 45%;
+            text-align: center;
+            color: #fff;
+            background-color: #4b0082;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button:hover {
+            background-color: #663399;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>P2P X DevDays</h1>
+        <p>Ready to face an exciting challenge?</p>
+    </div>
+    <div class="cards-container">
+        
+        <div class="card">
+            <div class="card-header">App Development</div>
+            <div class="card-content">
+                Welcome to the App Development domain! Whether you're coding native or hybrid apps, this challenge is for you.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Web Development</div>
+            <div class="card-content">
+                From front-end to back-end, this challenge covers it all. Get ready to showcase your web skills!
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Cyber Security</div>
+            <div class="card-content">
+                Secure the virtual world with your expertise in security practices. Are you ready for the challenge?
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">Machine Learning</div>
+            <div class="card-content">
+                Apply your ML knowledge to predict outcomes and tackle real-world data problems.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">Competitive Programming</div>
+            <div class="card-content">
+                Solve problems under pressure and compete for coding glory. Are you up for it?
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">IoT</div>
+            <div class="card-content">
+                Build smart solutions and innovate using the Internet of Things.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">Game Development</div>
+            <div class="card-content">
+                Bring your game ideas to life and dive deep into the world of game design and development.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">Graphic Design</div>
+            <div class="card-content">
+                Showcase your design creativity and create compelling visuals for this challenge.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">UI/UX</div>
+            <div class="card-content">
+                Design user-friendly and visually appealing interfaces for an optimal user experience.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+       
+        <div class="card">
+            <div class="card-header">Video Editing</div>
+            <div class="card-content">
+                Edit and create engaging video content that captures the essence of storytelling.
+            </div>
+            <div class="card-buttons">
+                <button class="button">Challenge</button>
+                <button class="button">Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

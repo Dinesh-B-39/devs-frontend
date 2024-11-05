@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Page</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #090909;
+            color: #c8c8c8; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+ 
+        nav {
+            background-color: #151515;
+            padding: 1rem 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+       
+        .team-section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .team-section h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+        }
+
+       
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+  
+        .team-card {
+            background: #8a2be2;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: transform 0.3s;
+            position: relative;
+            color: #ffffff;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid #ff6b6b;
+        }
+
+        .team-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ff6b6b;
+        }
+
+        .team-card p {
+            font-size: 0.9rem;
+            color: #f0f0f0;
+            margin-bottom: 1rem;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ff8787;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <nav>
+        <div class="logo">DEVS Team</div>
+    </nav>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h1>Our Team</h1>
+        <div class="card-container">
+            <!-- Team Member 1 -->
+            <div class="team-card animate_animated animate_fadeIn">
+                <img src="pro.webp" alt="Team Member">
+                <h2>Harisun S S</h2>
+                <p>President</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="team-card animate_animated animate_fadeIn" style="animation-delay: 0.2s;">
+                <img src="pro.webp" alt="Team Member">
+                <h2>Dr P. Revathy</h2>
+                <p>Advisor</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-card animate_animated animate_fadeIn" style="animation-delay: 0.4s;">
+                <img src="pro.webp" alt="Team Member">
+                <h2>Manovikram</h2>
+                <p>Vice-President</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="team-card animate_animated animate_fadeIn" style="animation-delay: 0.6s;">
+                <img src="pro.webp" alt="Team Member">
+                <h2>Thirumurugan A.K.S</h2>
+                <p>Vice-President</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- Team Member 5 -->
+            <div class="team-card animate_animated animate_fadeIn" style="animation-delay: 0.8s;">
+                <img src="pro.webp" alt="Team Member">
+                <h2>Ms. Soma Shanthi</h2>
+                <p>Secretary</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

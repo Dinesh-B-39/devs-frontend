@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEVS Community</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: white;
+        }
+
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #9b67ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .hero {
+            min-height: 400px;
+            position: relative;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, #ff6b6b22, #9b67ff22);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, #9b67ff 0%, #6b5bff 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            background: #ffd700;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .podcast-section {
+            background: #dc0000;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .podcast-card {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .podcast-card:hover {
+            transform: translateX(10px);
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .faq-item {
+            background: #1a1a1a;
+            margin: 1rem 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #2a2a2a;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem;
+            background: #2a2a2a;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            transform: scale(1.02);
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #9b67ff, #6b5bff);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            background: #1a1a1a;
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo animate_animated animate_fadeIn">DEVS</div>
+        <select>
+            <option>Home</option>
+            <option>Blogs</option>
+            <option>P2P Hub</option>
+            <option>Podcasts</option>
+            <option>Contests</option>
+            <option>Events</option>
+            <option>Gallery</option>
+            <option>Team</option>
+        </select>
+    </nav>
+
+    <section class="hero animate_animated animate_fadeIn">
+        <div class="about-section">
+            <h1>About Devs</h1>
+            <div class="mission-box animate_animated animate_fadeInUp">
+                <h2>Vision & Mission</h2>
+                <p>To create a dynamic community of developers who are passionate about technology and innovation, and who collaborate to solve real-world problems and create value for society</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="button-container">
+        <a href="#" class="btn animate_animated animate_bounceIn"><a href="even.html">P2P x DEVDAYS</a></a>
+        <a href="#" class="btn animate_animated animate_bounceIn" style="animation-delay: 0.2s">Peer-To-Peer</a>
+    </div>
+
+    <section class="podcast-section animate_animated animate_fadeInUp">
+        <h2>🎧 Podcasts</h2>
+        <div class="podcast-card">
+            <img src="/api/placeholder/60/60" alt="Podcast cover" />
+            <div>
+                <h3>The 5G Era Ft. Everyone</h3>
+                <p>DEVSEC PODCAST</p>
+            </div>
+        </div>
+        <div class="podcast-card">
+            <img src="/api/placeholder/60/60" alt="Podcast cover" />
+            <div>
+                <h3>Game Development</h3>
+                <p>DEVSEC PODCAST</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h2>FAQ's</h2>
+        <div class="faq-item animate_animated animate_fadeInLeft">
+            <div class="faq-question">
+                <span>What is DEVS all about?</span>
+                <span>+</span>
+            </div>
+        </div>
+        <div class="faq-item animate_animated animate_fadeInLeft" style="animation-delay: 0.2s">
+            <div class="faq-question">
+                <span>Who should join this club?</span>
+                <span>+</span>
+            </div>
+        </div>
+        <div class="faq-item animate_animated animate_fadeInLeft" style="animation-delay: 0.4s">
+            <div class="faq-question">
+                <span>What about beginners?</span>
+                <span>+</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-form animate_animated animate_fadeInUp">
+        <h2>📮 Reach out to us</h2>
+        <form>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="5" placeholder="Tell us more..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">SUBMIT</button>
+        </form>
+    </section>
+
+    <footer class="social-links">
+        <a href="#" class="social-link">X</a>
+        <a href="#" class="social-link">Facebook</a>
+        <a href="#" class="social-link">Instagram</a>
+        <a href="#" class="social-link">Discord</a>
+        <a href="#" class="social-link">LinkedIn</a>
+        <a href="#" class="social-link">YouTube</a>
+    </footer>
+</body>
+</html>
